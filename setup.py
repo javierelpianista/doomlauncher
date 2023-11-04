@@ -46,11 +46,7 @@ setup(
         include_package_data=True,
         install_requires = [
             'PyQt5',
-            'chardet'
-        #    'importlib_resources',
-        #    'fuzzywuzzy',
-        #    'python-Levenshtein',
-        #    'scidownl',
-        #    'arxiv'
+            'chardet',
+            'dmenu'
             ]
         )

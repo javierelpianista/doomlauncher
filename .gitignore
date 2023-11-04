@@ -1,0 +1,7 @@
+build/
+dist/
+doomlauncher.egg-info/
+doomlauncher/__pycache__/
+entropy.json
+prof1.json
+venv/
