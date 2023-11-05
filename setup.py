@@ -25,7 +25,7 @@ for pack in packages:
     print(pack)
 setup(
         name = 'doomlauncher',
-        version = '0.2',
+        version = '0.2.1',
         author = 'Javier Garcia', 
         long_description = 'No description for now',
         packages = packages,
@@ -34,7 +34,8 @@ setup(
                 'doomlauncher = doomlauncher.main:main'
                 ],
             'console_scripts' : [
-                'dlaunch = doomlauncher.tui:main'
+                'dlaunch = doomlauncher.tui:main',
+                'dld = doomlauncher.tui:run_dmenu'
                 ]
             },
         package_data = {'': 

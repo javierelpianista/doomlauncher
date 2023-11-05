@@ -1,6 +1,7 @@
 from .profilemanager import ProfileManager
 import argparse
 import subprocess
+import dmenu
 
 parser = argparse.ArgumentParser(
         description = 'dlaunch: a terminal launcher for PrBoom+.'
@@ -29,7 +30,6 @@ parser.add_argument(
         action = 'store_true'
         )
 
-
 def run_profile(mgr, profile_name, **kwargs):
     print('Running profile: ', profile_name)
 
@@ -49,12 +49,20 @@ def run_profile(mgr, profile_name, **kwargs):
     subprocess.run(command)
 
 
-def list_profiles(mgr):
+def list_profiles(mgr: ProfileManager):
     print('Profile list:')
     print('-------------')
 
     for profile in mgr.list_profiles():
         print(profile)
+
+def run_dmenu():
+    mgr = ProfileManager.load()
+
+    profiles = mgr.list_profiles()
+    profile_name = dmenu.show(profiles)
+
+    run_profile(mgr, profile_name)
 
 def main():
     args0 = parser.parse_args()
